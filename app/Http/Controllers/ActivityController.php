@@ -49,7 +49,7 @@ class activityController extends Controller
                 'required',
                 'max:10',
                 function ($attribute, $value, $fail) {
-                    $stu = db::table("student_info")->find($_POST['sid']);
+                    $stu = db::table("students")->find($_POST['sid']);
                     if ($stu == null || $stu->name != $value) {
                         $fail("错误代码01：学生信息 “". $_POST['sid']
                             . "-" . $value . "” 错误或无权限。如确认无误请联系管理员。");
